@@ -2,25 +2,37 @@
 
 <html>
     <head>
-        <title>My Web Page</title>
+        <title>Sorting Algorithm Visualiser</title>
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>
 
     <body>
-        <div class="transparent-row">
-            <p id="elements"> Elements: </p>
-            <p id="swaps"   > Swaps:    </p>
+        <!-- Sorting Container-->
+         <div id="container">
+            <h1>Sorting Algorithm Visualiser</h1>
+            <p>Visualise the sorting algorithm of your choice!</p>
+            <!-- Statistics and Input Row -->
+            <div class="transparent-row">
+                <p id="elements"  class="rowElement"> Elements: 100      </p>
+                <p id="swaps"     class="rowElement"> Swaps: 0           </p>
+                <p id="bestRound" class="rowElement"> Swaps Last Pass: 0 </p>
+                <!-- Element Number Input -->
+                <input type="number" id="elementNumInput"  class="rowElement" placeholder="Elements" min="2" max="1000" value="100">
+                <!-- Generate New Data Button-->
+                <button id="regenButton" class="rowElement">Generate Dataset</button> <br>
+                <!-- Available Sorting Algorithms -->
+                <select id="sortingAlgorithm"  class="rowElement" name="sortingAlgorithm">
+                    <option value="bubble"> Bubble Sort</option>
+                    <option value="merge" > Merge Sort </option>
+                    <option value="bogo"  > Bogo Sort  </option>
+                    <option value="binary"> Slow Sort  </option>
+                </select> <br>
+                <!-- Start Sorting Button -->
+                <button id="startButton" class="rowElement">Start</button>
+            </div>
 
-            <select id="sortingAlgorithm" name="sortingAlgorithm">
-                <option value="bubble"> Bubble </option>
-                <option value="merge" > Merge  </option>
-                <option value="bogo"  > Bogo   </option>
-                <option value="binary"> Slow   </option>
-              </select>
-            <button id="startButton">Start</button>
-        </div>
-
-        <div id="content">
+            <!-- Sorting Visualizer -->
+            <div id="content"></div>
         </div>
 
         <script src="index.js"></script>
